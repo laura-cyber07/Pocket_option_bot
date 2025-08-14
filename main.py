@@ -97,3 +97,5 @@ async def run_bot():
                         send_telegram_message(message)
 
 asyncio.run(run_bot())
+if __name__== "__main__":
+    main()
