@@ -1,0 +1,5 @@
+websockets
+discord.py
+requests
+pandas
+numpy
