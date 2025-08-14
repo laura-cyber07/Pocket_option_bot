@@ -1,8 +1,7 @@
-
 services:
   - type: worker
     name: pocket-option-bot
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt && pip install websockets"
+    buildCommand: "pip install websockets"
     startCommand: "python main.py"
