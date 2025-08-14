@@ -1,4 +1,4 @@
-import websocket
+import websockets
 import json
 import threading
 import requests
