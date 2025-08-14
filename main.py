@@ -1,4 +1,4 @@
-print (" Iniciando bot...")
+print ("✅ Iniciando bot...")
 import asyncio
 import json
 import websockets
