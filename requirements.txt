@@ -1,5 +1,5 @@
-websockets
-discord.py
-requests
-pandas
-numpy
+import websockets
+import discord.py
+import requests
+import pandas
+import numpy
