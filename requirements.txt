@@ -1,6 +1,7 @@
-websocket-client
+websockets
 requests
 python-telegram-bot==13.15
 pandas
 numpy
 ta
+
