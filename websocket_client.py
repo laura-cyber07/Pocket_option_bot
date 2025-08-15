@@ -83,7 +83,7 @@ def on_open(ws):
     send_telegram_message("✅ Bot conectado a Pocket Option y monitoreando activos OTC 90-92% payout")
 
 if __name__ == "__main__":
-    ws_url = "wss://api-msk.po.market/socket.io/?EIO=4&transport=websocket"
+    ws_url = "wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket"
     headers = [f"Cookie: {'; '.join([f'{k}={v}' for k, v in PO_COOKIES.items()])}"]
 
     ws = websocket.WebSocketApp(ws_url,
