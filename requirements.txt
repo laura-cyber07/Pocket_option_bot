@@ -1,8 +1,9 @@
-"websockets"
+websockets==11.0.3
 requests
 python-telegram-bot==13.15
 pandas
 numpy
 ta
+
 
 
