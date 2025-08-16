@@ -118,5 +118,6 @@ async def run_bot():
                 continue  # Continuar recibiendo mensajes
 
             await asyncio.sleep(1)  # Añadimos un pequeño retraso para evitar sobrecargar el servidor
+            
 if __name__ == "__main__:
 asyncio.run(run_bot())
