@@ -22,7 +22,7 @@ COOKIES = {
 }
 
 # URL WebSocket oficial de Pocket Option
-WS_URL = "wss://ws.pocketoption.com/"
+WS_URL =  "wss://ws.pocketoption.com/streaming/?EIO=3&transport=websocket"
 
 # === FUNCIONES DE TELEGRAM ===
 def send_telegram_message(message):
