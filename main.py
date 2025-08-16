@@ -120,4 +120,3 @@ async def run_bot():
             await asyncio.sleep(1)  # Añadimos un pequeño retraso para evitar sobrecargar el servidor
             
 asyncio.run(run_bot())
-if __name__ == "__main__:
