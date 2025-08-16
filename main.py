@@ -107,7 +107,7 @@ async def run_bot():
                     if len(prices) > 50:
                         score, conditions = generate_signal(prices[-50:])
                         if score >= 2:  # Señal con al menos 2 confirmaciones
-                            message = f"📊 Señal Detectada\nScore: {score}\nCondiciones:\n" + "\n".join(conditions)
+                            message = f"Señal Detectada\nScore: {score}\nCondiciones:\n" + "\n".join(conditions)
                             send_telegram_message(message)
             except websockets.exceptions.WebSocketException as e:
                 logger.error(f"Error en la conexión WebSocket: {e}")
