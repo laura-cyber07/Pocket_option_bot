@@ -64,5 +64,5 @@ async def handle_socket():
         logging.info("Reconectando...")
         await handle_socket()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     asyncio.run(handle_socket())
