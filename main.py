@@ -27,7 +27,7 @@ WS_URL = "wss://ws.pocketoption.com/"
 
 # === CONFIGURACIÓN DE LOGGER ===
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger(_name_)
+logger = logging.getLogger(__name__)
 
 # === FUNCIONES DE TELEGRAM ===
 def send_telegram_message(message):
