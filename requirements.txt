@@ -3,8 +3,9 @@ websocket-client
 requests
 pandas
 numpy
-ta-lib
+ta
 python-telegram-bot==20.8
+
 
 
 
