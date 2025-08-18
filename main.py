@@ -1,31 +1,30 @@
 import os
-import logging
-from telegram.ext import Updater, CommandHandler
+import threading
+from flask import Flask
+from websocket_client import start_websocket
 
-# Configuración de logging (para debug en Render)
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Crear la app Flask para el health check
+app = Flask(__name__)
 
-# Función para iniciar el bot
-def start(update, context):
-    update.message.reply_text('¡Bot funcionando correctamente en Render! ✅')
+@app.route('/')
+def home():
+    return "✅ Bot funcionando correctamente en Render."
 
-def main():
-    # Cargar token y chat ID desde variables de entorno
-    TOKEN = os.getenv('TELEGRAM_TOKEN')
-    if not TOKEN:
-        raise ValueError("Error: No se encontró la variable TELEGRAM_TOKEN en el entorno")
+# Iniciar el servidor Flask en un hilo separado
+def run_flask():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
-    # Inicializar el bot
-    updater = Updater(TOKEN, use_context=True)
-    dp = updater.dispatcher
+# Iniciar el bot de Pocket Option
+def run_bot():
+    print("✅ Bot iniciado y conectado a Pocket Option...")
+    start_websocket()  # Esta función debe estar definida en websocket_client.py
 
-    # Comandos
-    dp.add_handler(CommandHandler('start', start))
+if __name__ == "__main__":
+    # Iniciar Flask en un hilo (para health check)
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.daemon = True
+    flask_thread.start()
 
-    # Iniciar el bot
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+    # Iniciar el bot en el hilo principal
+    run_bot()
